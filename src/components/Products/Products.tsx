@@ -10,6 +10,7 @@ export default function Products() {
   if (productLoading) {
     return <Loader />
   }
+
   return (
     <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 p-4 bg-primary max-w-[85rem] mx-auto">
       {product.map((product) => (

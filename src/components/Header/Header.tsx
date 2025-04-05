@@ -30,9 +30,10 @@ export default function Header() {
           </Link> */}
         </div>
         <div className="flex px-4 gap-x-6 text-lg text-icon">
-          <div className="hover:bg-secondary transition p-1 rounded-lg">
+          <Link href="/carrinho"
+           className="hover:bg-secondary transition p-1 rounded-lg">
             <FaCartShopping className="" />
-          </div>
+          </Link>
 
           <div className="hover:bg-secondary transition p-1 rounded-lg">
             <IoPerson />

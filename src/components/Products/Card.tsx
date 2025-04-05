@@ -19,7 +19,7 @@ export default function Card({
   }
   return (
     <div
-      className="relative flex flex-col justify-between p-6  bg-primaryone shadow-sm border border-[#ddd] rounded-lg w-full 
+      className="relative flex flex-col justify-between p-6   bg-primaryone shadow-sm border border-[#ddd] rounded-lg w-full 
     lg:w-full 2xl:w-full"
       onClick={handleProduct}
     >
