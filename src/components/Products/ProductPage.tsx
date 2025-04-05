@@ -1,5 +1,5 @@
 'use client'
-import { useCart } from '@/context/CartContext'
+import { Product, useCart } from '@/context/CartContext'
 import { productGet } from '@/hook/productGet'
 import React from 'react'
 import Rating from '../Rating/StartRating'
@@ -7,6 +7,8 @@ import { FaCartShopping } from 'react-icons/fa6'
 import { FiArrowLeft } from 'react-icons/fi'
 import Link from 'next/link'
 import Loader from '../Loader/Loader'
+import toast from 'react-hot-toast'
+import { Products } from '@/@types'
 
 type ProductPageProps = {
   id: number
@@ -22,6 +24,35 @@ export default function ProductPage({ id }: ProductPageProps) {
 
   if (!productIdd || productIdd.length === 0) {
     return <p className="text-center text-red-500">Produto não encontrado</p>
+  }
+
+  const handleAddToCart = (product: Products) => {
+    try {
+      dispatch({
+        type: 'ADD_TO_CART',
+        product: {
+          id: product.id,
+          title: product.title,
+          price: product.price,
+          image: product.image,
+          category: product.category,
+          description: product.description!,
+          rating: product.rating,
+          quantity: 1,
+        },
+      })
+  
+      toast.success(`Adicionado ao carrinho!`, {
+        duration: 3000,
+        position: 'top-right',
+      })
+    } catch (error) {
+      console.error('Erro ao adicionar ao carrinho:', error)
+      toast.error('Erro ao adicionar produto. Tente novamente.', {
+        duration: 3000,
+        position: 'top-right',
+      })
+    }
   }
 
   return (
@@ -60,21 +91,7 @@ export default function ProductPage({ id }: ProductPageProps) {
                 R$ {product.price}
               </p>
               <button
-                onClick={() => {
-                  dispatch({
-                    type: 'ADD_TO_CART',
-                    product: {
-                      id: product.id,
-                      title: product.title,
-                      price: product.price,
-                      image: product.image,
-                      category: product.category,
-                      description: product.description!,
-                      rating: product.rating,
-                      quantity: 1,
-                    },
-                  })
-                }}
+                onClick={() => handleAddToCart(product)}
                 className="bg-icon text-white text-base p-2 rounded-3xl flex justify-center items-center gap-x-2"
               >
                 <FaCartShopping className="text-lg" />

@@ -8,7 +8,7 @@ import {
 } from 'react'
 
 // Tipo do produto
-type Product = {
+export type Product = {
   id: number
   title: string
   price: number
