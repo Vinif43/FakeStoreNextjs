@@ -27,16 +27,16 @@ export default function Cart() {
                 key={product.id}
                 className="flex max-lg:flex-col max-md:gap-2 justify-between items-center border-b border-gray-300 pb-2"
               >
-                <div className="flex gap-4 items-center justify-between md:justify-normal w-full">
-                  <div className="flex items-center  bg-primary py-4 px-4  md:px-14 rounded">
+                <div className="flex gap-4 items-center justify-start w-full">
+                  <div className="flex items-center max-sm:w-28 w-56  bg-primary py-2 lg:h-40   md:px-2 rounded">
                     <img
                       src={product.image}
                       alt={product.title}
-                      className=" h-20 max-sm:w-20 lg:h-36  rounded-md"
+                      className=" h-20 lg:h-36 w-fit mx-auto  rounded-md"
                     />
                   </div>
-                  <div className="flex flex-col gap-2">
-                    <p className="font-bold lg:text-lg ">{product.title}</p>
+                  <div className="flex flex-col gap-2 w-full">
+                    <p className="font-bold text-sm lg:text-lg ">{product.title}</p>
                     <p className="text-sm md:text-base text[#555]">
                       Preço: R$ {product.price.toFixed(2)}x {product.quantity}
                     </p>
