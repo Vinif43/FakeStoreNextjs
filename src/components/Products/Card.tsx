@@ -23,7 +23,7 @@ export default function Card({
     lg:w-full 2xl:w-full"
       onClick={handleProduct}
     >
-      <div className="relative h-60 bg-primary flex justify-center items-center   text-white px-4 pt-4 rounded-md">
+      <div className="relative h-60 bg-primary flex justify-center items-center   text-white p-4 rounded-md">
         <img className="rounded-sm  w-full h-full object-contain" src={image} alt="card-image" />
       </div>
       <div className=" pb-6 flex flex-col gap-y-4">
