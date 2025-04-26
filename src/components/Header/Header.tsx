@@ -16,12 +16,12 @@ export default function Header() {
           >
             Produtos
           </Link>
-          <Link
+          {/* <Link
             className="hover:bg-secondary transition p-2 rounded-lg font-bold"
             href="/sobre"
           >
             Sobre
-          </Link>
+          </Link> */}
           {/* <Link
             className="hover:bg-secondary transition p-2 rounded-lg font-bold"
             href="/contato"
