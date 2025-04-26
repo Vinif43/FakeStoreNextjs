@@ -24,7 +24,7 @@ export default function Card({
       onClick={handleProduct}
     >
       <div className="relative h-60 bg-primary flex justify-center items-center   text-white px-4 pt-4 rounded-md">
-        <img className="rounded-sm   h-52" src={image} alt="card-image" />
+        <img className="rounded-sm  w-full h-full object-contain" src={image} alt="card-image" />
       </div>
       <div className=" pb-6 flex flex-col gap-y-4">
         <h6 className="mb-1 text-black text-lg  font-bold line-clamp-1">
