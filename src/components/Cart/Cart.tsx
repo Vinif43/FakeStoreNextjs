@@ -2,6 +2,7 @@
 import React from 'react'
 import { useCart } from '@/context/CartContext'
 import { FaPlus, FaMinus, FaTrash } from 'react-icons/fa'
+import { FaCartShopping } from 'react-icons/fa6'
 
 export default function Cart() {
   const { state, dispatch } = useCart()
@@ -14,12 +15,26 @@ export default function Cart() {
   return (
     <div className="py-6 max-md:px-2">
       <div className="p-4 bg-primaryone  rounded-md drop-shadow-md max-w-4xl mx-auto">
-        <h2 className="text-xl md:text-2xl font-bold mb-6 mt-4">
+        {
+          state.cart.length > 0 && (
+            <h2 className="text-xl md:text-2xl font-bold mb-6 mt-4">
           Meu Carrinho
         </h2>
+          )
+        }
 
         {state.cart.length === 0 ? (
-          <p className="text-gray-600">Seu carrinho está vazio.</p>
+          <div className='flex flex-col gap-4 items-center justify-center py-4'>
+            <span className='text-stone-300 text-5xl'>
+              <FaCartShopping className="" />
+            </span>
+            <p className="text-base md:text-lg font-bold">
+              Seu carrinho está vazio
+            </p>
+            <p className="text-sm text-slate-500 font-medium">
+              Adicione produtos para começar a comprar
+            </p>
+          </div>
         ) : (
           <div className="space-y-4">
             {state.cart.map((product) => (
