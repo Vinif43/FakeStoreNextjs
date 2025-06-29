@@ -167,4 +167,4 @@ Este projeto é parte de um trabalho acadêmico e está disponível para fins ed
 
 ---
 
-**Desenvolvido como estudo de caso para TCC - Análise de Frameworks Frontend Modernos**
+**Desenvolvido como estudo de caso para TCC - ANÁLISE COMPARATIVA DE FRAMEWORKS DE INTERFACE WEB: ANGULAR X NEXT.JS**
